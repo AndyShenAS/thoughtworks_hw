@@ -9,16 +9,15 @@
 
 ## Test:
 
-
 ```
 # Test Render Grid
-python python rendergrid.py
+python rendergrid.py
 ```
 
 ![Test Render Grid](images/微信截图_20180730125335.png)
 
-
-
-## More Examples
-![Sheep](assets/sheep.png)
-![Donuts](assets/donuts.png)
+```
+# Check the validity of the input
+python check_input_test.py
+```
+![Check the validity of the input](images/微信截图_20180730150236.png)
