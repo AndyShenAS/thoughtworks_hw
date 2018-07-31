@@ -2,7 +2,7 @@
 # @Date:   2018-07-30T05:33:33+09:00
 # @Email:  disovery.yuan@gmail.com
 # @Last modified by:   shenmaoyuan
-# @Last modified time: 2018-07-30T15:02:08+09:00
+# @Last modified time: 2018-08-01T04:23:49+09:00
 # @License: Licensed under the Apache License, Version 2.0 (the "License")
 # @Copyright: Copyright (c) 2017 XXXXXX, Inc.
 
@@ -27,6 +27,8 @@ def check_command_format(command):
     if len(command[0].split(' ')) != 2:
         return True
     for twocell in command[1].split(';'):
+        if len(twocell.split(' ')) != 2:
+            return True
         for cell in twocell.split(' '):
             if len(cell.split(',')) != 2:
                 return True
@@ -36,17 +38,17 @@ def create_maze(command):
     """Create the maze from two-line commands
     """
     if check_command_format(command):
-        print('Incorrect command format​.​')
+        print('  Incorrect command format​.​')
         return 'Incorrect command format​.'
     try:
         size = [int(num) for num in command[0].split(' ')]
         conn = [[(int(cell.split(',')[0]), int(cell.split(',')[1])) for cell in twocell.split(' ')] for twocell in command[1].split(';')]
     except Exception as e:
         # print('ValueError:',str(e))
-        print('Invalid number format​.')
+        print('  Invalid number format​.')
         return 'Invalid number format​.'
     if check_num_range(size, conn):
-        print('Number out of range​.')
+        print('  Number out of range​.')
         return 'Number out of range​.'
     mz = maze.Maze(size, conn)
     if mz.matrix == 'Maze format error.':

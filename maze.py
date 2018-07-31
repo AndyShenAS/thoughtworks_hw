@@ -2,7 +2,7 @@
 # @Date:   2018-07-30T04:37:01+09:00
 # @Email:  disovery.yuan@gmail.com
 # @Last modified by:   shenmaoyuan
-# @Last modified time: 2018-07-30T15:00:59+09:00
+# @Last modified time: 2018-08-01T04:23:59+09:00
 # @License: Licensed under the Apache License, Version 2.0 (the "License")
 # @Copyright: Copyright (c) 2017 XXXXXX, Inc.
 
@@ -31,7 +31,7 @@ class Maze(object):
         for con in self.conn:
             vec = (con[1][0]-con[0][0], con[1][1]-con[0][1])
             if abs(vec[0]) + abs(vec[1]) != 1:
-                print('Maze format error.')
+                print('  Maze format error.')
                 return 'Maze format error.'
             """Check if the connection of maze is correct​.
             """
